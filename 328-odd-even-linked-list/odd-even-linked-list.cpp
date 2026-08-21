@@ -11,10 +11,10 @@ public:
         ListNode* ans = even;
 
         while (odd->next != NULL && even->next != NULL) {
-            odd->next = even->next;
-            odd = odd->next;
+            odd->next = odd->next->next;
+            even->next = even->next->next;
 
-            even->next = odd->next;
+            odd = odd->next;
             even = even->next;
         }
 
